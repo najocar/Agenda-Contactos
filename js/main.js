@@ -17,24 +17,24 @@ btnagregar.onclick = () => {
                 guardarContacto(db, contacto)
             } else {
                 alert("El telefono es demasiado largo");
-                window.location.href = '/';
+                window.location.href = '/Agenda-Contactos';
             }
 
         } else {
             alert("El nombre es demasiado largo");
-            window.location.href = '/';
+            window.location.href = '/Agenda-Contactos';
         }
 
     } else {
         alert("faltan datos");
-        window.location.href = '/';
+        window.location.href = '/Agenda-Contactos';
     }
 
 }
 
 const guardarContacto = (db, contacto) => {
     db.setItem(contacto.id, JSON.stringify(contacto));
-    window.location.href = '/';
+    window.location.href = '/Agenda-Contactos';
 }
 
 const cargarContactos = (db, parentNode) => {
@@ -66,7 +66,7 @@ const crearcontacto = (parentNode, contacto, db) => {
 
     iconoBorrar.onclick = () => {
         db.removeItem(contacto.id);
-        window.location.href = '/';
+        window.location.href = '/Agenda-Contactos';
     }
 
     divContacto.appendChild(iconoNombre);
